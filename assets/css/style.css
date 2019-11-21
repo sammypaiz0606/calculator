@@ -1,26 +1,39 @@
+
 .container {
     padding:5px;
+    margin:20px auto;
 }
 #output {
-    height:45px;
+    height:65px;
     background:#000;
     color:aqua;
     width:100%;
     font-size:2em;
-    padding:5px;
+    padding:10px;
     text-align:right;
+    margin-top:10px;
     margin-bottom:25px;
     overflow:hidden;
+    box-shadow:2px 2px 7px 7px inset #fff;
+    border-radius:5px;
 }
 
 #myCalcu {
-    width:350px;
-    background:dimgray;
-    padding:25px;
+    width:365px;
+    height:580px;
+    background:lightgrey;
+    padding:20px;
+    margin:20px auto;
+    box-shadow:3px 5px 5px #ddd;
+    box-shadow:1px 1px 15px 3px inset #000;
 }
 .cbutton {
-    font-size:2em;
-    width:45px;
+    font-size:3em;
+    width:52px;
+    height:90px;
     margin:4px;
-    padding:4px;   
+    padding:10px;   
+}
+.cbutton:hover {
+    box-shadow:2px 3px 7px #A19F9F;
 }
