@@ -1,3 +1,6 @@
+.container {
+    padding:5px;
+}
 #output {
     height:45px;
     background:#000;
@@ -7,12 +10,12 @@
     padding:5px;
     text-align:right;
     margin-bottom:25px;
+    overflow:hidden;
 }
 
 #myCalcu {
     width:350px;
     background:dimgray;
-    height:350px;
     padding:25px;
 }
 .cbutton {
@@ -20,7 +23,4 @@
     width:45px;
     margin:4px;
     padding:4px;   
-}
-.container {
-    padding:5px;
 }
