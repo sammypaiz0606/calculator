@@ -4,6 +4,7 @@ var myOutput = document.getElementById('output');
 var myCal = '';
 var myCom = false;
 var mySwitch = false;
+var myOpe = ['+', '-', '*', '/'];
 
 // console.log(mybtn);
 for(var i=0; i < mybtn.length; i++) {
@@ -14,27 +15,39 @@ for(var i=0; i < mybtn.length; i++) {
             myCom = false;
             myCal = '';
         }
-
-
+        if(myValue == '+' || myValue == '-' || myValue =='*' || myValue == '/') {
+            if(mySwitch) {
+                mySwitch = false;
+                if(myOpe.indexOf(myOutput.innerHTML.slice(-1)) > -1) {
+                    myCal = myCal.substring(0, myCal.length-1);
+                }else {
+                    myCal = eval(myCal); 
+                }      
+         }
+         mySwitch = true;
+    }
         if(myValue == '=') {
+            myValue = '';
+            if(myOpe.indexOf(myOutput.innerHTML.slice(-1)) == -1) {
+                myCal = eval(myCal);
+            }
+
             myCal = eval(myCal);
             myCom = true;
          }else if(myValue == 'C') {
             myCal = 0;
             myCom = true;
-        }else{
+        }else if(myOutput.innerHTML.indexOf('.') > -1 && myValue == '.') {
+            myValue= '';
+        }
+        
+        else{
             myCal += myValue;
         }
 
-        if(mySwitch) {
-            mySwitch = false;
-            myCal = eval(myCal);
+     
 
-        }
-
-        if(myValue == '+' || myValue == '-' || myValue =='*' || myValue == '/') {
-            mySwitch = true;
-        }
+       
         myOutput.innerHTML = myCal;
     });
 } 
